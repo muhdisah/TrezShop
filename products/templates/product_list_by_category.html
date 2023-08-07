@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+     <section id="trending">
+        <div class="container">
+            <div class="trending-content">
+                <h1>Trending This Week</h1>
+                <ul class = 'trending-list'>
+                    <li><a href="{% url 'product_list_by_category' 'laptop' %}">Laptop</a></li>
+                    <li><a href="{% url 'product_list_by_category' 'desktop' %}">Desktop</a></li>
+                    <li><a href="{% url 'product_list_by_category' 'printer' %}">Printer</a></li>
+                    <li><a href="{% url 'product_list_by_category' 'accessories' %}">Accessories</a></li>
+                </ul>
+            </div>
+	    <div class="row">
+            {% for product in products %}
+				<div class="col-md-3" style="margin-bottom: 10px; padding: 0px 5px;">
+					<div class="card" style="">
+                        <div style="background: #020202 url({{ product.name.image_url.url}}); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 250px;">
+                        </div>
+						<div class="card-body">
+							<h5 class="card-title">{{ product.name.name }} - <strong>${{ product.name.price }}</strong></h5>
+							<p class="card-text">{{ product.name.item_description }}</p>
+                            <a href="#" class="btn btn-primary" style="padding: 6px 40px">Buy</a>
+							<a href="#" class="btn btn-primary add-to-cart-link">Add to cart</a>
+						</div>
+					</div>
+				</div>
+            {% endfor %}
+		</div>
+    </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- content section -->
+    <section class="content">
+        <div class="container">
+            <div class="img-col">
+                <img src="{% static './images/desktop.jpg' %}" alt="desktop">
+            </div>
+            <div class="img-col">
+                <img src="{% static './images/laptop.jpg' %}" alt="laptop">
+            </div>
+            <div class="img-col">
+                <img src="{% static './images/keyboard.jpg' %}" alt="mouse">
+            </div>
+        </div>
+    </section>
+    <section id="trending">
+        <div class="container">
+            <div class="trending-content">
+                <h1>Trending This Week</h1>
+                <ul class = 'trending-list'>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Desktop</a></li>
+                    <li><a href="#">Printer</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="trending-image">
+                <div class="img-col">
+                    <img src="{% static './images/dell.jpg' %}" alt="desktop">
+                    <div class="item-detail">
+                        <h3>iMac Pro. 24"</h3>
+                        <p>$300</p>
+                    </div>
+                </div>
+                <div class="img-col">
+                    <img src="{% static './images/hero2.jpg' %}" alt="laptop">
+                    <div class="item-detail">
+                        <h3>iMac Pro. 24"</h3>
+                        <p>$300</p>
+                    </div>
+                </div>
+                <div class="img-col">
+                    <img src="{% static './images/hero.jpg' %}" alt="mouse">
+                    <div class="item-detail">
+                        <h3>iMac Pro. 24"</h3>
+                        <p>$300</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="customer">
+        <div class="container">
+            <div class="customer-testimonial">
+                <h1>customer testimonial</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ab alias commodi doloribus magnam voluptatibus odio sapiente asperiores eius rem?</p>
+                <div class="customer-image">
+                    <img src="{% static './images/c1.jpg' %}" alt="" srcset="">
+                        <p>Abubakar Sa'eed (Web Developer)</p><br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="recommend">
+        <div class="container">
+            <h2 class="recommend-heading">You May Like</h2>
+            <div class="recommend-item">
+                    <div class="img-col">
+                        <img src="{% static './images/desktop.jpg' %}" alt="desktop">
+                        <div class="item-detail">
+                            <h3>iMac Pro. 24"</h3>
+                            <p>$300</p>
+                        </div>
+                    </div>
+                    <div class="img-col">
+                        <img src="{% static './images/laptop.jpg' %}" alt="laptop">
+                        <div class="item-detail">
+                            <h3>iMac Pro. 24"</h3>
+                            <p>$300</p>
+                        </div>
+                    </div>
+                    <div class="img-col">
+                        <img src="{% static './images/keyboard.jpg' %}" alt="mouse">
+                        <div class="item-detail">
+                            <h3>iMac Pro. 24"</h3>
+                            <p>$300</p>
+                        </div>
+                    </div>
+                 </div>
+        </div>
+    </section>
+    <section id="news">
+        <div class="container">
+            <h1 class="latest-heading">Latest News</h1>
+            <div class="news-content">
+                <div class="news-col">
+                    <img src="{% static './images/magazine.jpg' %}" alt="" srcset="">
+                    <a href="#"><h2>Camera</h2></a>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, quas! Maiores reprehenderit ad quibusdam quos consectetur omnis. Libero, officiis maiores.</p>
+                    <a class='read-more' href="#read-more">Read more</a>
+
+                </div>
+                <div class="news-col">
+                    <img src="{% static './images/magazine1.jpg' %}" alt="" srcset="">
+                    <a href="#"><h2>Beautiful dog</h2></a>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi veritatis laboriosam odit repudiandae hic error, numquam voluptatum in distinctio accusantium!</p>
+                    <a class='read-more' href="#read-more">Read more</a>
+
+
+                </div>
+                <div class="news-col">
+                    <img src="{% static './images/pexels-洋榤-郭-2399840.jpg' %}" alt="" srcset="">
+                    <a href="#"><h2>IBM Quantum Computer</h2></a>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat totam tenetur omnis hic, molestias temporibus sed mollitia? Id, eum voluptate.</p>
+                    <a class='read-more' href="#read-more">Read more</a>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="our-services">
+                <div class="service-col">
+                    <a href="#delivery"><img src="{% static './images/services1.svg' %}"></a>
+                    <h2>Fast & free delivery</h2>
+                    <p>Free delivery on all orders</p>
+                </div>
+                <div class="service-col">
+                    <a href="#secure-pay"><img src="{% static './images/services2.svg' %}" alt=""></i></a>
+                    <h2>Secure Payment</h2>
+                    <p>Free delivery on all orders</p>
+                </div>
+                <div class="service-col">
+                    <a href="#Money-back"><img src="{% static './images/services3.svg' %}" alt=""></a>
+                    <h2>Money Back Guarantee</h2>
+                    <p>Free delivery on all orders</p>
+                </div>
+                <div class="service-col">
+                    <a href="#support"><img src="{% static './images/services4.svg' %}" alt=""></a>
+                    <h2>Online Support</h2>
+                    <p>Free delivery on all orders</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>

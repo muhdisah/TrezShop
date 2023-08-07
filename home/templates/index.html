@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{%load static%}
+{% block content %}
+     <!-- hero section -->
+    <section class="hero">
+        <div class="hero-image">
+            <img src="{%static './images/hero.jpg' %}" alt="hero-image" srcset="">
+            <div class="hero-text">
+              <p>On sale</p>
+              <h2>Macbook Pro</h2>
+              <p>The ultimate pro. 16 inch model</p>
+              <div class="item-price">
+                <p>$ 699.5</p>
+                <a href="#">Shop today</a>
+            </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="{%static './images/hero1.jpg' %}" alt="" srcset="">
+            <div class="hero-text ">
+              <p>On sale</p>
+              <h2>HP Elitebook</h2>
+              <p>Nvidia graphics. 12 inch model</p>
+              <div class="item-price">
+                <p>$ 590.5</p>
+                <a href="#">Shop today</a>
+            </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="{% static './images/hero2.jpg' %}" alt="" srcset="">
+            <div class="hero-text ">
+              <p>On sale</p>
+              <h2>HP Elitebook</h2>
+              <p>Nvidia graphics. 12 inch model</p>
+              <div class="item-price">
+                <p>$ 500.5</p>
+                <a href="#">Shop today</a>
+            </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="{% static './images/hero3.jpg' %}" alt="" srcset="">
+            <div class="hero-text ">
+              <p>On sale</p>
+              <h2>HP Elitebook</h2>
+              <p>Nvidia graphics. 12 inch model</p>
+              <div class="item-price">
+                <p>$ 450.5</p>
+                <a href="#">Shop today</a>
+            </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="{% static './images/hero5.jpg' %}" alt="" srcset="">
+            <div class="hero-text ">
+              <p>On sale</p>
+              <h2>HP Elitebook</h2>
+              <p>Nvidia graphics. 12 inch model</p>
+              <div class="item-price">
+                <p>$ 320.5</p>
+                <a href="#">Shop today</a>
+            </div>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="{% static './images/hero6.jpg' %}" alt="" srcset="">
+            <div class="hero-text ">
+              <p>On sale</p>
+              <h2>HP Elitebook</h2>
+              <p>Nvidia graphics. 12 inch model</p>
+              <div class="item-price">
+                <p>$ 520.5</p>
+                <a href="{% url 'login' %}">Shop today</a>
+            </div>
+            </div>
+          </div>
+
+          <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </section>
+        <section>
+            {% block product %}
+
+            <h1 class="container" style="text-align: center">All Products</h1>
+
+             <div class="container">
+	            <div class="row">
+			    {% for product in products %}
+				    <div class="col-md-3" style="margin-bottom: 10px; padding: 0px 5px;">
+					    <div class="card" style="">
+                            <div style="background: #020202 url({{ product.image_url.url}}); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 250px;">
+                        </div>
+						<div class="card-body">
+							<h5 class="card-title">{{ product.name }} - <strong>${{ product.price }}</strong></h5>
+							<p class="card-text">{{ product.item_description }}</p>
+                            <a href="#" class="btn btn-primary" style="padding: 6px 40px">Buy</a>
+							<a href="#" class="btn btn-primary">Add to cart</a>
+						</div>
+					</div>
+				</div>
+			    {% endfor %}
+		    </div>
+        </div>
+
+    {# trending section #}
+
+         <section id="trending">
+            <div class="container">
+                <div class="trending-content">
+                    <h1>Trending This Week</h1>
+                    <ul class = 'trending-list'>
+                        <li><a href="#">Laptop</a></li>
+                        <li><a href="#">Desktop</a></li>
+                        <li><a href="#">Printer</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+            <div class="row">
+                {% for i in trending %}
+                    <div class="col-md-3" style="margin-bottom: 10px; padding: 0px 5px;">
+                        <div class="card" style="">
+                            <div style="background: #020202 url({{ i.name.image_url.url}}); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 250px;">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ i.name.name }} - <strong>${{ i.name.price }}</strong></h5>
+                                <p class="card-text">{{ i.name.item_description }}</p>
+                                <a href="#" class="btn btn-primary" style="padding: 6px 40px">Buy</a>
+                                <a href="#" class="btn btn-primary">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            </div>
+            </div>
+        </section>
+            {% endblock %}
+    </section>
+    <section id="recommend">
+        <div class="container">
+            <h2 class="recommend-heading" style="text-align: center;">You May Like</h2>
+           <div class="row">
+			{% for i in recommend_item %}
+				<div class="col-md-3" style="margin-bottom: 10px; padding: 0px 5px;">
+					<div class="card" style="">
+                        <div style="background: #020202 url({{ i.recommend_product.image_url.url}}); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 250px;">
+                        </div>
+						<div class="card-body">
+							<h5 class="card-title">{{ i.recommend_product.name}} - <strong>${{ i.recommend_product.price }}</strong></h5>
+							<p class="card-text">{{ i.recommend_product.item_description }}</p>
+                            <a href="#" class="btn btn-primary" style="padding: 6px 40px">Buy</a>
+							<a href="#" class="btn btn-primary">Add to cart</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+        </div>
+    </section>
+    {% block news_content %}
+    <h1 class="latest-heading" style="text-align: center;">Latest News</h1>
+    <div class="container">
+	    <div class="row">
+			{% for i in news %}
+				<div class="col-md-3" style="margin-bottom: 10px; padding: 0px 5px;">
+					<div class="card" style="">
+                        <div style="background: #020202 url({{ i.image.url}}); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 250px;">
+                        </div>
+						<div class="card-body">
+							<h5 class="card-title"><a href="#">{{ i.title }}</a></h5>
+							<p class="card-text">{{ i.description }}</p>
+							<a href="#" class="btn btn-primary">read-more</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+    </div>
+    {% endblock news_content %}
+
+{% endblock %}
